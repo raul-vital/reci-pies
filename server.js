@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const session = require('express-session')
 
-//*********  **********/
+//********* PORT CONNECTION **********/
 const port = process.env.PORT ? process.env : '3000'
 
 
@@ -16,6 +16,16 @@ mongoose.connection.on('connected', () =>{
     console.log(`Connected to MongoDB - ${mongoose.connection.name}`)
 })
 
+
+app.use(express.urlencoded({extended: true}))
+app.use(methodOverride('_method'))
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: true,
+    })
+)
 
 
 //********* ROUTES **********/
