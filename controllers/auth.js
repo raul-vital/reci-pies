@@ -27,12 +27,12 @@ router.post('/sign-up', async (req,res)=>{
         return res.send('Username not available!')
     }
     if(req.body.password !== req.body.confirmPassword) {
-        return res.send('Password and Confirm Passwords do not match. Try again.')
+        return res.send('Password and Confirm Password do not match. Try again.')
     }
     const hashPassword = bcrypt.hashSync(req.body.password, 10)
     req.body.password = hashPassword
     await User.create(req.body)
-       return res.send('User Created!')
+       return res.redirect('/auth/sign-in')
     }catch(error){
         console.log(error)
         res.redirect('/')
@@ -40,6 +40,7 @@ router.post('/sign-up', async (req,res)=>{
 })
 
 router.post('/sign-in', async(req,res)=>{
+    try{
     const databaseUser = await User.findOne({username: req.body.username})
     if(!databaseUser){
         return res.send('Unable to sign in. Please try again.')
@@ -56,7 +57,11 @@ router.post('/sign-in', async(req,res)=>{
         _id: databaseUser._id
     }
     res.redirect('/')
+    }catch(error){
+        console.log(error)
+        res.redirect('/')
 
+    }
 
 })
 module.exports = router
