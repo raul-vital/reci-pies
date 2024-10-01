@@ -11,7 +11,7 @@ const port = process.env.PORT ? process.env : '3000'
 
 //********* ROUTES **********/
 app.get('/', (req, res) => {
-    res.send("Welcome to Reci-Pies!")
+    res.render("index.ejs")
 })
 
 
