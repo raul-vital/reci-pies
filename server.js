@@ -9,6 +9,8 @@ const session = require('express-session')
 //********* PORT CONNECTION **********/
 const port = process.env.PORT ? process.env : '3000'
 
+//********* CONTROLLERS **********/
+const authController = require('./controllers/auth')
 
 //********* MongoDB Connection **********/
 mongoose.connect(process.env.MONGODB_URI)
@@ -35,8 +37,7 @@ app.get('/', (req, res) => {
 
 
 
-
-
+app.use('/auth', authController)
 
 
 
