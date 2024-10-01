@@ -15,6 +15,7 @@ const port = process.env.PORT ? process.env : '3000'
 
 //********* CONTROLLERS **********/
 const authController = require('./controllers/auth')
+const recipesController = require('./controllers/recipes')
 
 //********* MongoDB Connection **********/
 mongoose.connect(process.env.MONGODB_URI)
@@ -44,6 +45,7 @@ app.get('/', (req, res) => {
 //*********************/
 app.use('/auth', authController)
 app.use(signedIn)
+app.use('/users/:userId/recipes', recipesController)
 
 
 
