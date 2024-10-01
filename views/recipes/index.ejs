@@ -9,6 +9,18 @@
     <%- include('../partials/navbar.ejs') %>
     <h1> Welcome, <%= user.username %></h1>
     <h2> All Recipes</h2>
+    <ul>
+        <% if(recipes.length > 0){ %>
+            <% recipes.forEach(recipe => { %>
+                <a href="/users/<%= user._id %>/recipes/<%= recipe.id %>">
+                    <h2><%=recipe.title%></h2>
+                </a>
+
+                <% }) %>
+        <% }else{ %>
+            <p>The are saved recipes!</p>
+             <% } %>
+    </ul>
     <a href="/users/<%= user._id %>/recipes/new">Add New Recipe</a>
     
 </body>

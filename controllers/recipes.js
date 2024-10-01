@@ -28,6 +28,15 @@ router.post('/', async (req,res)=>{
     console.log(error)
     res.redirect('/')
    }
+})
+router.get('/:recipeId', async (req,res)=>{
+    const user = await User.findById(req.session.user._id)
+    const recipe = user.recipes.id(req.params.recipeId)
+    res.render('./show.ejs', {
+        recipe: recipe
+    })
 
 })
+
+
 module.exports = router
