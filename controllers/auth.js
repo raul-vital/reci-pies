@@ -39,4 +39,24 @@ router.post('/sign-up', async (req,res)=>{
     }
 })
 
+router.post('/sign-in', async(req,res)=>{
+    const databaseUser = await User.findOne({username: req.body.username})
+    if(!databaseUser){
+        return res.send('Unable to sign in. Please try again.')
+    }
+
+    const validPassword = bcrypt.compareSync(req.body.password, databaseUser.password)
+
+    if(!validPassword){
+        return res.send('Unable to sign in. Please try again.')
+        
+    }
+    req.session.user ={
+        username: databaseUser.username,
+        _id: databaseUser._id
+    }
+    res.redirect('/')
+
+
+})
 module.exports = router
