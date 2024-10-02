@@ -17,10 +17,12 @@
 
                 <% }) %>
         <% }else{ %>
-            <p>The are saved recipes!</p>
+            <p>There are no saved recipes.</p>
              <% } %>
     </ul>
-    <a href="/users/<%= user._id %>/recipes/new">Add New Recipe</a>
+    <a href="/users/<%= user._id %>/recipes/new">
+        <button type="submit">Add New Recipe</button>
+    </a>
     
 </body>
 </html>

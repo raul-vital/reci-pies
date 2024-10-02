@@ -55,6 +55,18 @@ router.put('/:recipeId', async (req,res)=>{
     }
 })
 
+router.delete('/:recipeId', async (req,res)=>{
+   try{ 
+     const user = await User.findById(req.session.user._id)
+     user.recipes.id(req.params.recipeId).deleteOne()
+     await user.save()
+     res.redirect(`/users/${user._id}/recipes`)
+   }catch(error){
+      console.log(error)
+      res.redirect('/')
+   }
+})
+
 
 router.get('/:recipeId/edit', async (req,res)=>{
     try{
