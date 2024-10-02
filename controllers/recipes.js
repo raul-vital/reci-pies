@@ -30,12 +30,23 @@ router.post('/', async (req,res)=>{
    }
 })
 router.get('/:recipeId', async (req,res)=>{
+    try{
     const user = await User.findById(req.session.user._id)
     const recipe = user.recipes.id(req.params.recipeId)
     res.render('./show.ejs', {
         recipe: recipe
     })
+   }catch(error){
+    res.redirect('/')
+   }
 
+})
+
+router.get('/:recipeId/edit', async (req,res)=>{
+    const user = await User.findById(req.session.user._id)
+    const recipeItem = user.recipes.id(req.params.recipeId)
+    res.render('./edit.ejs', {recipeItem})
+    
 })
 
 
