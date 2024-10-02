@@ -6,8 +6,8 @@ const User = require('../models/user')
 //********* ROUTES **********/
 router.get('/', async (req,res)=>{
     try{
-    const user = await User.findById(req.session.user._id)
-    res.render('recipes/index.ejs', {recipes: user.recipes})
+      const user = await User.findById(req.session.user._id)
+      res.render('recipes/index.ejs', {recipes: user.recipes})
     }catch(error){
         console.log(error)
         res.redirect('/')
@@ -20,20 +20,20 @@ router.get('/new', (req,res)=>{
 
 router.post('/', async (req,res)=>{
    try{
-    const user = await User.findById(req.session.user._id)
-    user.recipes.push(req.body)
-    await user.save()
-    res.redirect(`/users/${user._id}/recipes`)
+      const user = await User.findById(req.session.user._id)
+      user.recipes.push(req.body)
+      await user.save()
+      res.redirect(`/users/${user._id}/recipes`)
    }catch(error){
-    console.log(error)
-    res.redirect('/')
+     console.log(error)
+     res.redirect('/')
    }
 })
 router.get('/:recipeId', async (req,res)=>{
     try{
-    const user = await User.findById(req.session.user._id)
-    const recipe = user.recipes.id(req.params.recipeId)
-    res.render('./show.ejs', {
+      const user = await User.findById(req.session.user._id)
+      const recipe = user.recipes.id(req.params.recipeId)
+      res.render('./show.ejs', {
         recipe: recipe
     })
    }catch(error){
@@ -42,11 +42,29 @@ router.get('/:recipeId', async (req,res)=>{
 
 })
 
+router.put('/:recipeId', async (req,res)=>{
+    try{
+      const user = await User.findById(req.session.user._id)
+      const recipeItem = user.recipes.id(req.params.recipeId)
+      recipeItem.set(req.body)
+      await user.save()
+      res.redirect(`/users/${user._id}/recipes`)
+    }catch(error){
+        console.log(error)
+        res.redirect('/')
+    }
+})
+
+
 router.get('/:recipeId/edit', async (req,res)=>{
-    const user = await User.findById(req.session.user._id)
-    const recipeItem = user.recipes.id(req.params.recipeId)
-    res.render('./edit.ejs', {recipeItem})
-    
+    try{
+      const user = await User.findById(req.session.user._id)
+      const recipeItem = user.recipes.id(req.params.recipeId)
+      res.render('./edit.ejs', {recipeItem})
+    }catch(error){
+        console.log(error)
+        res.redirect('/')
+    }
 })
 
 

@@ -7,8 +7,7 @@
 </head>
 <body>
     <%- include('../partials/navbar.ejs') %>
-    <h1> Welcome, <%= user.username %></h1>
-    <h2> All Recipes</h2>
+    <h1> All Recipes</h1>
     <ul>
         <% if(recipes.length > 0){ %>
             <% recipes.forEach(recipe => { %>

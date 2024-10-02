@@ -6,12 +6,13 @@
     <title><%=recipe.title%></title>
 </head>
 <body>
+      <%- include('./partials/navbar') %>
       <h1><%=recipe.title%></h1>
       <p>Ingredients: <%= recipe.ingredients %></p>
       <p>Protein: <%= recipe.protein %>g</p>
       <p>Total Carbs: <%= recipe.carbs %>g</p>
       <p>Instructions: <%= recipe.instructions %></p>
     
-
+ <a href="/users/<%=user._id %>/recipes/<%= recipe._id %>/edit">Edit Recipe</a>
 </body>
 </html>
