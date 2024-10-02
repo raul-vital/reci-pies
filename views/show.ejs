@@ -9,10 +9,14 @@
 <body>
       <%- include('./partials/navbar') %>
       <h1><%=recipe.title%></h1>
-      <p>Ingredients: <%= recipe.ingredients %></p>
-      <p>Protein: <%= recipe.protein %>g</p>
-      <p>Total Carbs: <%= recipe.carbs %>g</p>
-      <p>Instructions: <%= recipe.instructions %></p>
+      <p class="items">Ingredients: <%= recipe.ingredients %></p>
+      <hr>
+      <p class="items">Protein: <%= recipe.protein %>g</p>
+      <hr>
+      <p class="items">Total Carbs: <%= recipe.carbs %>g</p>
+      <hr>
+      <p class="items">Instructions: </p>
+      <p class="items"><%= recipe.instructions %></p></p>
  <form action="/users/<%=user._id %>/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete Recipe</button>
  </form>  
