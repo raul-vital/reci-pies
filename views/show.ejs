@@ -9,6 +9,12 @@
 <body>
       <%- include('./partials/navbar') %>
       <h1><%=recipe.title%></h1>
+      <form action="/users/<%=user._id %>/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete Recipe</button>
+     </form>  
+     <a href="/users/<%=user._id %>/recipes/<%= recipe._id %>/edit">
+        <button type="submit">Edit Recipe</button>
+     </a>
       <p class="items">Ingredients: <%= recipe.ingredients %></p>
       <hr>
       <p class="items">Protein: <%= recipe.protein %>g</p>
@@ -16,12 +22,7 @@
       <p class="items">Total Carbs: <%= recipe.carbs %>g</p>
       <hr>
       <p class="items">Instructions: </p>
-      <p class="items"><%= recipe.instructions %></p></p>
- <form action="/users/<%=user._id %>/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete Recipe</button>
- </form>  
- <a href="/users/<%=user._id %>/recipes/<%= recipe._id %>/edit">
-    <button type="submit">Edit Recipe</button>
- </a>
+      <p class="items"><%= recipe.instructions %></p>
+
 </body>
 </html>

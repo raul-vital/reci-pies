@@ -8,7 +8,10 @@
 </head>
 <body>
     <%- include('../partials/navbar.ejs') %>
-    <h1> All Recipes</h1>
+    <h1> Your Recipes</h1>
+    <a href="/users/<%= user._id %>/recipes/new" id="newBtn">
+        <button type="submit">Add New Recipe</button>
+    </a>
     <ul class="recipes">
         <% if(recipes.length > 0){ %>
             <% recipes.forEach(recipe => { %>
@@ -23,9 +26,6 @@
             <p>There are no saved recipes.</p>
              <% } %>
     </ul>
-    <a href="/users/<%= user._id %>/recipes/new">
-        <button type="submit">Add New Recipe</button>
-    </a>
 
 </body>
 </html>

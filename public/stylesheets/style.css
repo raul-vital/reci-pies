@@ -9,7 +9,6 @@ body{
 
 }
 h1{
-    margin: 0;
     padding: 0;
     font-family: 'Quicksand', sans-serif;
     color: #444;
@@ -50,10 +49,13 @@ nav{
 .recipe{
     display: inline-block;
     border-radius: 20px;
-    background: #fffce8;
+    background: #f6e2bb;
     position: relative;
     text-align: center;
     padding: 0 20px 30px 20px
+}
+.recipe:hover{
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
 }
 .items{
     text-align: center;
@@ -67,4 +69,42 @@ hr{
     color: black;
     padding: 0;
    
+}
+button{
+    margin-top: 30px;
+    border-radius:36px;
+    background-color: #fee996;
+    border:0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size:0.8em;
+    display:block;
+    padding: 10px 16px;
+    letter-spacing: 2px;
+}
+button:hover{
+     box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+
+}
+
+#newBtn{
+    display:flex;
+    justify-content: center;
+}
+.homeImg{
+    
+    width: 400px;
+    margin: 30px auto -30px;
+    display:flex;
+    text-align: center;
+}
+#subTitle{
+    text-align: center;
+    font-size: 1.7rem;
+}
+footer{
+    text-align: center;
+    margin-top:120px;
+    color: #444;
+    opacity: 50%;
 }
