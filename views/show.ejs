@@ -15,14 +15,24 @@
      <a href="/users/<%=user._id %>/recipes/<%= recipe._id %>/edit">
         <button type="submit">Edit Recipe</button>
      </a>
+     <form>
       <p class="items">Ingredients: <%= recipe.ingredients %></p>
+    </form>
       <hr>
+      <form>
       <p class="items">Protein: <%= recipe.protein %>g</p>
+    </form>
       <hr>
+      <form>
       <p class="items">Total Carbs: <%= recipe.carbs %>g</p>
+    </form>
       <hr>
+      <form>
       <p class="items">Instructions: </p>
       <p class="items"><%= recipe.instructions %></p>
+    </form>
+      
+    <footer>Copyright &#169 2024 Reci-Pies</footer>
 
 </body>
 </html>
