@@ -5,6 +5,7 @@ const app = express()
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const session = require('express-session')
+const path = require('path')
 
 //********* MIDDLEWARE **********/
 const signedIn = require('./middleware/signed-in')
@@ -26,6 +27,7 @@ mongoose.connection.on('connected', () =>{
 //********************/
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
+app.use(express.static(path.join(__dirname,"public")))
 app.use(
     session({
         secret: process.env.SESSION_SECRET,
