@@ -24,7 +24,7 @@ mongoose.connection.on('connected', () =>{
     console.log(`Connected to MongoDB - ${mongoose.connection.name}`)
 })
 
-//********************/
+//******** MIDDLEWARE **********/
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname,"public")))
@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
 })
 
 
-//*********************/
+//********** CONTROLLERS MANAGER ***********/
 app.use('/auth', authController)
 app.use(signedIn)
 app.use('/users/:userId/recipes', recipesController)
@@ -54,5 +54,5 @@ app.use('/users/:userId/recipes', recipesController)
 
 //********* LISTENER **********/
 app.listen(port, () => {
-    console.log(`Listening in P(ie)ORT.... ${port}`)
+    console.log(`Listening in P(ie)ORT.... 🥧 ${port}`)
 })

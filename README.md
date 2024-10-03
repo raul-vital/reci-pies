@@ -1,5 +1,6 @@
 ### Reci-Pies - A Pie Recipe Manager
-
+![Reci-Pies Homepage](https://i.imgur.com/kbNhMpW.png)
+![Your Recipes Dashboard](https://i.imgur.com/hZmjgHo.png)
 
 ### App name
 * Reci-Pies - A Pie Recipe Manager
