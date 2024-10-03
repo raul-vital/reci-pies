@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/show.css" />
     <title><%=recipe.title%></title>
 </head>
 <body>
       <%- include('./partials/navbar') %>
       <h1><%=recipe.title%></h1>
-      <form action="/users/<%=user._id %>/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+      <img src="/assets/sliceofpie.png" alt="slice of pie icon">
+      <div class="delete-edit-link">
+        <a href="/users/<%=user._id %>/recipes/<%= recipe._id %>/edit">
+            <button type="submit">Edit Recipe</button>
+         </a>
+      <form action="/users/<%=user._id %>/recipes/<%= recipe._id %>?_method=DELETE" method="POST" class="delete-link">
         <button type="submit">Delete Recipe</button>
      </form>  
-     <a href="/users/<%=user._id %>/recipes/<%= recipe._id %>/edit">
-        <button type="submit">Edit Recipe</button>
-     </a>
-     <form>
+    </div>
+    
+   
+     <div>
       <p class="items">Ingredients: <%= recipe.ingredients %></p>
-    </form>
-      <hr>
-      <form>
-      <p class="items">Protein: <%= recipe.protein %>g</p>
-    </form>
-      <hr>
-      <form>
-      <p class="items">Total Carbs: <%= recipe.carbs %>g</p>
-    </form>
-      <hr>
-      <form>
+      <p class="items">Protein: <%= recipe.protein %>g /slice</p>
+      <p class="items">Total Carbs: <%= recipe.carbs %>g /slice</p>
       <p class="items">Instructions: </p>
       <p class="items"><%= recipe.instructions %></p>
-    </form>
+     </div>
       
     <footer>Copyright &#169 2024 Reci-Pies</footer>
 
