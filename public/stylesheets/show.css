@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 body{
     margin: 20px, 40px;
-    background: #f5deb3;
+    background: #f8e8ca;
     font-family: "Quicksand";
     letter-spacing: 1px;
     font-size: 1.4rem;
@@ -41,10 +41,7 @@ nav{
     padding: 0 20px 30px 20px
 }
 hr{
-    width:200px;
-    color: black;
-    padding: 0;
-   
+    border: 3px dotted #444 ;
 }
 button{
     margin-top: 30px;
@@ -101,4 +98,12 @@ img{
     margin: -60px auto -30px;
    display:flex;
    justify-content: center;
+}
+.item-title{
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    padding: 0 20px 30px 20px;
+    font-weight: bold;
 }

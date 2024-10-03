@@ -19,13 +19,17 @@
      </form>  
     </div>
     
-   
+     
      <div>
-      <p class="items">Ingredients: <%= recipe.ingredients %></p>
+     <p class="item-title">Ingredients: </p>
+      <p class="items"><%= recipe.ingredients %></p>
+      <hr>
+      <p class="item-title">Instructions: </p>
+      <p class="items"><%= recipe.instructions %></p>
+      <hr>
+      <p class="item-title">Nutrition Facts: </p>
       <p class="items">Protein: <%= recipe.protein %>g /slice</p>
       <p class="items">Total Carbs: <%= recipe.carbs %>g /slice</p>
-      <p class="items">Instructions: </p>
-      <p class="items"><%= recipe.instructions %></p>
      </div>
       
     <footer>Copyright &#169 2024 Reci-Pies</footer>
