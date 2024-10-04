@@ -2,7 +2,7 @@
 
     <a class="auth-links" href="/">Home</a>
     <% if(user){ %>    
-         <a class="auth-links" href="/users/<%=user._id%>/recipes">Your Recipes</a>
+         <a class="auth-links" href="/users/<%=user._id%>/recipes">My Recipes</a>
         <a  class="auth-links" href="/auth/sign-out">Sign out</a>
      <% }else{ %>
         <a class="auth-links" href="/auth/sign-in">Sign in</a>
