@@ -23,8 +23,12 @@ router.get('/sign-out',(req,res)=>{
 router.post('/sign-up', async (req,res)=>{
     try{
     const databaseUser = await User.findOne({username: req.body.username})
+    const databaseEmail = await User.findOne({email: req.body.email})
     if(databaseUser){
         return res.send('Username not available!')
+    }
+    if(databaseEmail){
+        return res.send('Email already in use!')
     }
     if(req.body.password !== req.body.confirmPassword) {
         return res.send('Password and Confirm Password do not match. Try again.')

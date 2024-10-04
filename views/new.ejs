@@ -16,7 +16,7 @@
     <h1>Add a New Recipe: </h1>
     <form action="/users/<%= user._id %>/recipes" method="POST">
         <label for="title">Title:</label>
-         <input type="text" name="title" id="title" required >
+         <input type="text" name="title" id="title" maxlength="30" required >
 
         <label for="ingredients">Ingredients:</label>
          <input type="text" name="ingredients" id="ingredients" required>
