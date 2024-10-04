@@ -7,7 +7,7 @@
 > This is a Pie Recipe Manager application. It allowed me to explore essential web development technologies like Node.js, Express, MongoDB, and EJS. It is a full CRUD application with user authentication, session management, and database storing. This app is also highly extensible, features like image uploads, user roles, search functionality and public sharing recipes can be easily added. I found it to be the perfect starting point for a project that can grow as my skills improve. 
 
 ### Getting Started 
-* [Reci-Pies - A Pie Recipe Manager]()
+* [Reci-Pies - A Pie Recipe Manager](https://reci-pies-ef82fcb71f78.herokuapp.com/)
 * [Planning Materials](https://trello.com/b/JvV0dhBT/reci-pie)
 
 ### Attributions
