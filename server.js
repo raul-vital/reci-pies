@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const session = require('express-session')
 const path = require('path')
+const morgan = require('morgan')
 
 //********* MIDDLEWARE **********/
 const signedIn = require('./middleware/signed-in')
@@ -13,7 +14,7 @@ const passUserToView = require('./middleware/pass-user-to-view')
 
 //********* PORT CONNECTION **********/
 //const port = process.env.PORT ? process.env.PORT : '3000'
-const { port = 3000 } = process.env.PORT 
+const port = process.env.PORT || 3000
 
 //********* CONTROLLERS **********/
 const authController = require('./controllers/auth')
@@ -26,6 +27,7 @@ mongoose.connection.on('connected', () =>{
 })
 
 //******** MIDDLEWARE **********/
+app.use(morgan('dev'))
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname,"public")))
