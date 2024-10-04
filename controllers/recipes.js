@@ -4,6 +4,8 @@ const router = express.Router()
 const User = require('../models/user')
 
 //********* ROUTES **********/
+
+//********* INDEX, PASS RECIPES **********/
 router.get('/', async (req,res)=>{
     try{
       const user = await User.findById(req.session.user._id)
@@ -13,11 +15,12 @@ router.get('/', async (req,res)=>{
         res.redirect('/')
     }
 })
-
+//********* NEW FORM **********/
 router.get('/new', (req,res)=>{
     res.render('./new.ejs')
 })
 
+//********* CREATE NEW **********/
 router.post('/', async (req,res)=>{
    try{
       const user = await User.findById(req.session.user._id)
@@ -29,6 +32,8 @@ router.post('/', async (req,res)=>{
      res.redirect('/')
    }
 })
+
+//********* SHOW PAGE **********/
 router.get('/:recipeId', async (req,res)=>{
     try{
       const user = await User.findById(req.session.user._id)
@@ -42,6 +47,7 @@ router.get('/:recipeId', async (req,res)=>{
 
 })
 
+//********* EDIT ROUTE **********/
 router.put('/:recipeId', async (req,res)=>{
     try{
       const user = await User.findById(req.session.user._id)
@@ -55,6 +61,7 @@ router.put('/:recipeId', async (req,res)=>{
     }
 })
 
+//********* DELETE ROUTE **********/
 router.delete('/:recipeId', async (req,res)=>{
    try{ 
      const user = await User.findById(req.session.user._id)
@@ -67,7 +74,7 @@ router.delete('/:recipeId', async (req,res)=>{
    }
 })
 
-
+//********* EDIT FORM **********/
 router.get('/:recipeId/edit', async (req,res)=>{
     try{
       const user = await User.findById(req.session.user._id)
