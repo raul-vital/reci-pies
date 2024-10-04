@@ -31,14 +31,14 @@ nav{
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 120px;
-    font-size: 2rem
+    font-size: 2rem;
 }
 .items{
     text-align: center;
     font-size: 2rem;
     border-radius: 20px;
     text-align: center;
-    padding: 0 20px 30px 20px
+    padding: 0 20px 30px 20px;
 }
 hr{
     border: 3px dotted #444 ;
