@@ -13,7 +13,6 @@ const signedIn = require('./middleware/signed-in')
 const passUserToView = require('./middleware/pass-user-to-view')
 
 //********* PORT CONNECTION **********/
-//const port = process.env.PORT ? process.env.PORT : '3000'
 const port = process.env.PORT || 3000
 
 //********* CONTROLLERS **********/
