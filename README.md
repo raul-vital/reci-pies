@@ -1,6 +1,6 @@
 # Reci-Pies
-![Reci-Pies Homepage](https://i.imgur.com/q6gMiJF.png)
-![My Recipes Dashboard](https://i.imgur.com/u9fjwYg.png)
+![Reci-Pies Homepage](https://i.imgur.com/5d6uRNZ.png)
+![My Recipes Dashboard](https://i.imgur.com/k4yaQwu.png)
 
 ### Reci-Pies - A Pie Recipe Manager
  This is a Pie Recipe Manager app that allows user to sign-up, sign-in, view, create, update and delete recipes of their favorite pies. Building the application allowed me to explore essential web development technologies like Node.js, Express, MongoDB, and EJS. It is a full CRUD application with user authentication, session management, and database storing. This app is also highly extensible, features like image uploads, user roles, search functionality and public sharing recipes can be easily added. I found it to be the perfect starting point for a project that can grow as my skills improve. 

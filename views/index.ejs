@@ -9,20 +9,26 @@
 </head>
 <body>
     <nav>
-        <a href="/">Home</a>
-        <% if(user){ %>    
+        
+        <% if(user){ %> 
+            <a href="/">Home</a>  
             <a href="/auth/sign-out">Sign out</a>
          <% }else{ %>
-            <a href="/auth/sign-in">Sign in</a>
-            <a href="/auth/sign-up">Sign up</a>
+
+            <a href="/auth/sign-in">
+                <button type="button">Sign in</button>
+            </a>
+            <a href="/auth/sign-up">
+                <button type="button">Sign up</button>
+            </a>
     
         <% } %>
     </nav>
     <% if(user){ %>
-       <h2>Hello, <%=user.username %>. </h2>
+       <h2 id="username">Hello, <%=user.username %>. </h2>
         <% } %>
         <h1>Welcome to Reci-Pies</h1>
-       <h2 id="subTitle">A Pie Recipe Manager<h2></h2>
+       <h2 id="subTitle">A Pie Recipe Manager</h2>
        <% if(user){ %>
        <a href="/users/<%=user._id%>/recipes" id="newBtn">
         <button type="submit">View Recipes</button>

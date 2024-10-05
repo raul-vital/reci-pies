@@ -29,7 +29,7 @@ a{
 }
 nav{
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-end;
     margin-bottom: 120px;
     font-size: 2rem;    
